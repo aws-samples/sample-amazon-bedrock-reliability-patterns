@@ -1,5 +1,0 @@
-2025-10-14 21:48:57,617 - bedrock_cross_region_inference_20251014_214857 - INFO - Starting cross-region inference demonstration
-2025-10-14 21:48:57,876 - bedrock_cross_region_inference_20251014_214857 - INFO - Cross-region inference request for profile: us.anthropic.claude-3-sonnet-20240229-v1:0
-2025-10-14 21:48:59,601 - bedrock_cross_region_inference_20251014_214857 - INFO - Response received: 1.72s, tokens: 69
-2025-10-14 21:48:59,602 - bedrock_cross_region_inference_20251014_214857 - ERROR - Demonstration failed: Invalid model/profile ID
-2025-10-14 21:48:59,602 - bedrock_cross_region_inference_20251014_214857 - INFO - Cross-region inference demonstration completed
