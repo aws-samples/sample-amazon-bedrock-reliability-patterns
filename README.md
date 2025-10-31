@@ -1,5 +1,6 @@
 # Amazon Bedrock Reliability Patterns
 
+
 Amazon Bedrock is a fully managed service that offers high-performing foundation models from leading AI companies through a single API. Customers are using Amazon Bedrock to build innovative applications that transform their businesses, bringing efficiency, intelligence, and automation to their workflows.
 
 ## Overview
