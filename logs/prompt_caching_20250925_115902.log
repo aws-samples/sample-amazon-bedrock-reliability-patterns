@@ -1,0 +1,146 @@
+=== AMAZON BEDROCK PROMPT CACHING DEMONSTRATION ===
+Timestamp: 2025-09-25 11:59:10
+Model: amazon.nova-lite-v1:0
+
+[11:59:02] === PROMPT CACHING DEMONSTRATION START ===
+[11:59:02] Model: amazon.nova-lite-v1:0
+[11:59:02] Cache Requirements: 1,000 token minimum for Nova models
+[11:59:02] Cache TTL: 5 minutes
+[11:59:02] 
+=== DOCUMENT LOADING ===
+[11:59:02] Loading PDF document: ../../data/aws-caf-for-ai.pdf
+[11:59:02] PyPDF2 not available, using fallback content
+[11:59:02] 
+=== PROMPT CACHING REQUEST: CACHE WRITE ===
+[11:59:02] System Prompt Length: 1669 characters
+[11:59:02] Document Content Length: 1254 characters
+[11:59:02] User Query: What are the key components of the AWS Cloud Adoption Framework for AI?
+[11:59:02] Cache Point: After document content
+[11:59:02] Inference Config: {
+  "maxTokens": 500,
+  "temperature": 0,
+  "topP": 1
+}
+[11:59:04] 
+--- RESPONSE DETAILS ---
+[11:59:04] Response Time: 1.78s
+[11:59:04] Content: ### Relevant Quotes:
+[1] "The AWS Cloud Adoption Framework (CAF) for AI provides guidance for organizations looking to adopt artificial intelligence and machine learning capabilities in the cloud."
+[2] "This framework helps organizations understand the key considerations, best practices, and common challenges when implementing AI solutions."
+[3] "Key Components:
+1. Business Perspective - Aligning AI initiatives with business outcomes
+2. People Perspective - Building AI skills and organizational capabilities
+3. Governance Perspective - Managing AI risks and compliance requirements
+4. Platform Perspective - Building scalable AI infrastructure
+5. Security Perspective - Implementing AI security best practices
+6. Operations Perspective - Operating AI systems at scale"
+
+### Answer:
+The key components of the AWS Cloud Adoption Framework for AI are:
+
+1. **Business Perspective**: This component focuses on aligning AI initiatives with business outcomes. It ensures that the AI projects are strategically aligned with the organization's goals and objectives.
+
+2. **People Perspective**: This involves building AI skills and organizational capabilities. It emphasizes the importance of developing the necessary expertise within the organization to effectively implement and manage AI solutions.
+
+3. **Governance Perspective**: This component addresses managing AI risks and compliance requirements. It ensures that the AI initiatives comply with relevant regulations and ethical standards.
+
+4. **Platform Perspective**: This focuses on building scalable AI infrastructure. It provides guidance on creating robust and scalable infrastructure to support AI workloads.
+
+5. **Security Perspective**: This component deals with implementing AI security best practices. It ensures that AI systems are secure and protected against potential threats.
+
+6. **Operations Perspective**: This involves operating AI systems at scale. It provides guidance on managing and maintaining AI systems to ensure they run efficiently and effectively.
+
+These components collectively help organizations build comprehensive AI adoption strategies that deliver business value while managing risks effectively.
+[11:59:04] Usage Metrics: {
+  "inputTokens": 14,
+  "outputTokens": 358,
+  "totalTokens": 912,
+  "cacheReadInputTokens": 0,
+  "cacheWriteInputTokens": 540
+}
+[11:59:04] Cache Write Tokens: 540
+[11:59:04] Cache Read Tokens: 0
+[11:59:06] 
+=== PROMPT CACHING REQUEST: CACHE READ ===
+[11:59:06] System Prompt Length: 1669 characters
+[11:59:06] Document Content Length: 1254 characters
+[11:59:06] User Query: What are the main challenges organizations face when adopting AI according to this document?
+[11:59:06] Cache Point: After document content
+[11:59:06] Inference Config: {
+  "maxTokens": 500,
+  "temperature": 0,
+  "topP": 1
+}
+[11:59:08] 
+--- RESPONSE DETAILS ---
+[11:59:08] Response Time: 1.98s
+[11:59:08] Content: ### Relevant Quotes:
+[1] "Main Challenges:
+- Data quality and availability
+- Skills gaps in AI/ML expertise
+- Governance and ethical AI considerations
+- Integration with existing systems
+- Scaling AI initiatives across the organization
+- Managing costs and ROI measurement"
+
+### Answer:
+According to the document, the main challenges organizations face when adopting AI include:
+
+1. **Data Quality and Availability**: Ensuring that the data used to train and operate AI systems is of high quality and readily available is a significant challenge. This includes dealing with issues like data bias, incompleteness, and inconsistency.
+
+2. **Skills Gaps in AI/ML Expertise**: There is often a shortage of skilled professionals who understand AI and machine learning. This gap can hinder the development and deployment of AI solutions.
+
+3. **Governance and Ethical AI Considerations**: Organizations need to manage the risks associated with AI, including ethical considerations and compliance with regulations. This involves establishing governance frameworks to ensure responsible AI use.
+
+4. **Integration with Existing Systems**: Integrating AI solutions with existing IT infrastructure and business processes can be complex and requires careful planning and execution.
+
+5. **Scaling AI Initiatives Across the Organization**: Expanding AI initiatives to different parts of the organization can be challenging, requiring coordination and alignment across various departments.
+
+6. **Managing Costs and ROI Measurement**: Organizations need to effectively manage the costs associated with AI projects and measure the return on investment to justify the expenditures.
+
+These challenges highlight the multifaceted nature of AI adoption and the importance of a comprehensive strategy that addresses each of these areas.
+[11:59:08] Usage Metrics: {
+  "inputTokens": 15,
+  "outputTokens": 309,
+  "totalTokens": 864,
+  "cacheReadInputTokens": 540,
+  "cacheWriteInputTokens": 0
+}
+[11:59:08] Cache Write Tokens: 0
+[11:59:08] Cache Read Tokens: 540
+[11:59:10] 
+=== PROMPT CACHING REQUEST: CACHE MISS ===
+[11:59:10] System Prompt Length: 1669 characters
+[11:59:10] Document Content Length: 4813 characters
+[11:59:10] User Query: What are the key components of the AWS Cloud Adoption Framework for AI?
+[11:59:10] Cache Point: After document content
+[11:59:10] Inference Config: {
+  "maxTokens": 500,
+  "temperature": 0,
+  "topP": 1
+}
+[11:59:10] 
+--- RESPONSE DETAILS ---
+[11:59:10] Response Time: 0.56s
+[11:59:10] Content: ## Relevant quotes:
+No relevant quotes
+
+## Answer:
+The provided document does not contain any information about the key components of the AWS Cloud Adoption Framework for AI. Therefore, I cannot provide an answer based on the content of this document. If you have access to the specific AWS Cloud Adoption Framework for AI documentation, I recommend reviewing that for detailed information on its key components.
+[11:59:10] Usage Metrics: {
+  "inputTokens": 14,
+  "outputTokens": 74,
+  "totalTokens": 1175,
+  "cacheReadInputTokens": 0,
+  "cacheWriteInputTokens": 1087
+}
+[11:59:10] Cache Write Tokens: 1087
+[11:59:10] Cache Read Tokens: 0
+[11:59:10] 
+=== FINAL ANALYSIS ===
+[11:59:10] Cache Write (Call 1): 540 tokens
+[11:59:10] Cache Read (Call 2): 540 tokens
+[11:59:10] Cache Miss (Call 3): 0 tokens read
+[11:59:10] Performance improvement: -11.3% faster
+[11:59:10] Time savings: -0.20s
+[11:59:10] Caching working: Yes

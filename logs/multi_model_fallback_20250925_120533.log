@@ -1,0 +1,45 @@
+=== MANUAL MULTI-MODEL FALLBACK DEMONSTRATION ===
+Timestamp: 2025-09-25 12:05:35
+Region: us-east-1
+Models: amazon.nova-lite-v1:0, amazon.nova-micro-v1:0, amazon.nova-pro-v1:0
+
+[12:05:33] Initialized multi-model fallback with 3 models
+[12:05:33] Model 1: amazon.nova-lite-v1:0
+[12:05:33] Model 2: amazon.nova-micro-v1:0
+[12:05:33] Model 3: amazon.nova-pro-v1:0
+[12:05:33] === MULTI-MODEL FALLBACK DEMONSTRATION START ===
+[12:05:33] 
+=== MODEL AVAILABILITY CHECK ===
+[12:05:33] Model amazon.nova-lite-v1:0: Available
+[12:05:33] Model amazon.nova-micro-v1:0: Available
+[12:05:33] Model amazon.nova-pro-v1:0: Available
+[12:05:33] Total available models: 3/3
+[12:05:33] 
+=== MULTI-MODEL FALLBACK REQUEST: Normal Operation ===
+[12:05:33] Prompt: Explain the benefits of microservices architecture in 2 sentences.
+[12:05:33] Fallback order: amazon.nova-lite-v1:0 -> amazon.nova-micro-v1:0 -> amazon.nova-pro-v1:0
+[12:05:33] 
+--- ATTEMPT 1: amazon.nova-lite-v1:0 ---
+[12:05:33] Attempting inference with amazon.nova-lite-v1:0
+[12:05:34] Success with amazon.nova-lite-v1:0
+[12:05:34] Response time: 0.65s
+[12:05:34] Content: Microservices architecture allows for more flexible, independent deployment and scaling of applications, leading to increased efficiency and faster time-to-market. It also enables better fault isolation, making it easier to identify and fix issues without affecting the entire system.
+[12:05:34] Usage: {
+  "inputTokens": 12,
+  "outputTokens": 48,
+  "totalTokens": 60
+}
+[12:05:34] 
+=== FALLBACK DEMONSTRATION ===
+[12:05:34] Prompt: Describe the importance of fault tolerance in distributed systems in 2 sentences.
+[12:05:34] Invalid model (first attempt): amazon.nova-lite-v1:0-invalid
+[12:05:34] Valid models (subsequent attempts): amazon.nova-micro-v1:0, amazon.nova-pro-v1:0
+[12:05:34] 
+--- ATTEMPT 1: amazon.nova-lite-v1:0-invalid ---
+[12:05:34] Attempting inference with amazon.nova-lite-v1:0-invalid
+[12:05:34] Failed with amazon.nova-lite-v1:0-invalid: An error occurred (ValidationException) when calling the Converse operation: The provided model identifier is invalid.
+[12:05:35] 
+--- ATTEMPT 2: amazon.nova-micro-v1:0 ---
+[12:05:35] Attempting inference with amazon.nova-micro-v1:0
+[12:05:35] Success with amazon.nova-micro-v1:0
+[12:05:35] Response time: 0.43s

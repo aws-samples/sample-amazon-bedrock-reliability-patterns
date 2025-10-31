@@ -1,0 +1,147 @@
+=== AMAZON BEDROCK INTELLIGENT PROMPT ROUTING DEMONSTRATION ===
+Timestamp: 2025-09-25 11:36:44
+Region: us-east-1
+
+[11:36:12] 
+=== AVAILABLE ROUTERS DISCOVERY ===
+[11:36:12] Found Router: {'arn': 'arn:aws:bedrock:us-east-1:181769953252:default-prompt-router/amazon.nova:1', 'name': 'Nova Prompt Router', 'status': 'AVAILABLE', 'type': 'default', 'created_at': datetime.datetime(2025, 4, 21, 7, 0, tzinfo=tzutc())}
+[11:36:12] Found Router: {'arn': 'arn:aws:bedrock:us-east-1:181769953252:default-prompt-router/anthropic.claude:1', 'name': 'Anthropic Prompt Router', 'status': 'AVAILABLE', 'type': 'default', 'created_at': datetime.datetime(2024, 11, 20, 0, 0, tzinfo=tzutc())}
+[11:36:12] Found Router: {'arn': 'arn:aws:bedrock:us-east-1:181769953252:default-prompt-router/meta.llama:1', 'name': 'Meta Prompt Router', 'status': 'AVAILABLE', 'type': 'default', 'created_at': datetime.datetime(2024, 11, 20, 0, 0, tzinfo=tzutc())}
+[11:36:12] Default Routers Found: 3
+[11:36:12] 
+=== INTELLIGENT ROUTING REQUEST: Default Router Test 1 ===
+[11:36:12] Router ARN: arn:aws:bedrock:us-east-1:181769953252:default-prompt-router/anthropic.claude:1
+[11:36:12] Prompt: Hi there!
+[11:36:12] Prompt Length: 9 characters
+[11:36:13] 
+--- RESPONSE DETAILS ---
+[11:36:13] Response Time: 0.78s
+[11:36:13] Content: Hello! How can I assist you today?
+[11:36:13] Usage: {
+  "inputTokens": 10,
+  "outputTokens": 12,
+  "totalTokens": 22
+}
+[11:36:13] 
+=== INTELLIGENT ROUTING REQUEST: Default Router Test 2 ===
+[11:36:13] Router ARN: arn:aws:bedrock:us-east-1:181769953252:default-prompt-router/anthropic.claude:1
+[11:36:13] Prompt: Explain the architectural patterns for building resilient AI applications with multiple fallback strategies.
+[11:36:13] Prompt Length: 108 characters
+[11:36:34] 
+--- RESPONSE DETAILS ---
+[11:36:34] Response Time: 21.06s
+[11:36:34] Content: Building resilient AI applications with multiple fallback strategies is a crucial aspect of designing robust and reliable systems. Here are some architectural patterns that can be employed to achieve this:
+
+1. **Microservices Architecture**:
+   - Divide the AI application into smaller, independent services that handle specific functionalities.
+   - Each service can have its own AI model or algorithm, allowing for multiple fallback options.
+   - If one service fails or experiences issues, the overall application can still function by relying on the other services.
+   - This architectural pattern promotes modularity, scalability, and fault tolerance.
+
+2. **Hybrid Architecture**:
+   - Combine multiple AI models or algorithms within the same application.
+   - Utilize a primary AI model or algorithm as the main decision-making component.
+   - Implement fallback strategies by incorporating secondary or alternative AI models or algorithms.
+   - The fallback models can be triggered based on specific conditions, such as the primary model's confidence score, input data quality, or system performance metrics.
+   - This approach ensures that the application can still provide reasonable outputs even if the primary AI model encounters issues.
+
+3. **Ensemble Learning**:
+   - Employ an ensemble of multiple AI models or algorithms to make a final decision.
+   - Each model in the ensemble can be trained on different data, use different algorithms, or have different hyperparameters.
+   - The ensemble can use techniques like majority voting, weighted averaging, or stacking to combine the outputs of the individual models.
+   - If one or more models in the ensemble fail or perform poorly, the remaining models can still contribute to the final decision, providing a fallback mechanism.
+
+4. **Adaptive Fallback Strategies**:
+   - Implement dynamic fallback strategies that can adapt to changing conditions or input data.
+   - Monitor the performance and reliability of the primary AI model or algorithm.
+   - Automatically trigger fallback strategies when the primary model's performance or reliability drops below a certain threshold.
+   - The fallback strategies can range from using simpler models, rule-based algorithms, or human-in-the-loop interventions.
+   - This approach ensures that the application can gracefully degrade its performance while maintaining a reasonable level of functionality.
+
+5. **Multi-Modal Fusion**:
+   - Combine multiple input modalities (e.g., text, image, speech) to make decisions.
+   - Leverage the strengths of different modalities to provide a more robust and reliable output.
+   - If one input modality is unavailable or unreliable, the application can rely on the remaining modalities as fallback options.
+   - This architectural pattern can be particularly useful in scenarios where the primary input modality may be susceptible to noise or failures.
+
+6. **Distributed Computing and Redundancy**:
+   - Leverage distributed computing frameworks, such as Apache Spark or Apache Flink, to parallelize the execution of AI models or algorithms.
+   - Deploy multiple instances of the same AI model or algorithm across different nodes or clusters.
+   - If one instance fails or experiences performance degradation, the application can seamlessly switch to another instance, providing a fallback mechanism.
+   - This approach can also help with scalability and load balancing, further enhancing the resilience of the AI application.
+
+By incorporating these architectural patterns and implementing multiple fallback strategies, AI applications can become more resilient, fault-tolerant, and capable of gracefully handling failures or performance issues. This helps ensure that the application can continue to provide reliable and consistent outputs, even in the face of unexpected challenges or changing environmental conditions.
+[11:36:34] Usage: {
+  "inputTokens": 24,
+  "outputTokens": 784,
+  "totalTokens": 808
+}
+[11:36:34] 
+=== CUSTOM ROUTER CREATION ===
+[11:36:34] Router Name: demo-router-1758814572
+[11:36:34] Models: ['anthropic.claude-3-haiku-20240307-v1:0', 'anthropic.claude-3-5-sonnet-20241022-v2:0']
+[11:36:34] Fallback Model: anthropic.claude-3-haiku-20240307-v1:0
+[11:36:34] Router Created: arn:aws:bedrock:us-east-1:181769953252:prompt-router/pb69f59q1643
+[11:36:34] Waiting for router to become active...
+[11:36:35] Router Status Check 1: AVAILABLE
+[11:36:35] Router is now active and ready
+[11:36:35] 
+=== INTELLIGENT ROUTING REQUEST: Custom Router Test 1 ===
+[11:36:35] Router ARN: arn:aws:bedrock:us-east-1:181769953252:prompt-router/pb69f59q1643
+[11:36:35] Prompt: Hi there!
+[11:36:35] Prompt Length: 9 characters
+[11:36:35] 
+--- RESPONSE DETAILS ---
+[11:36:35] Response Time: 0.55s
+[11:36:35] Content: Hello! How can I assist you today?
+[11:36:35] Usage: {
+  "inputTokens": 10,
+  "outputTokens": 12,
+  "totalTokens": 22
+}
+[11:36:35] 
+=== INTELLIGENT ROUTING REQUEST: Custom Router Test 2 ===
+[11:36:35] Router ARN: arn:aws:bedrock:us-east-1:181769953252:prompt-router/pb69f59q1643
+[11:36:35] Prompt: Explain the architectural patterns for building resilient AI applications with multiple fallback strategies.
+[11:36:35] Prompt Length: 108 characters
+[11:36:44] 
+--- RESPONSE DETAILS ---
+[11:36:44] Response Time: 8.66s
+[11:36:44] Content: Building resilient AI applications with multiple fallback strategies is a crucial aspect of ensuring the reliability and robustness of these systems. Architectural patterns can help achieve this goal by providing a structured approach to handling failures and gracefully degrading the system's performance. Here are some common architectural patterns for building resilient AI applications with multiple fallback strategies:
+
+1. **Microservices Architecture**:
+   - In a microservices architecture, the AI application is divided into smaller, independent services that communicate with each other through well-defined interfaces.
+   - This allows for better isolation and fault tolerance, as a failure in one service does not necessarily affect the entire application.
+   - Microservices can have their own fallback strategies, such as circuit breakers, retries, and fallback responses, to handle failures and provide alternative functionality.
+
+2. **Layered Architecture**:
+   - A layered architecture separates the AI application into distinct layers, such as the presentation layer, business logic layer, and data access layer.
+   - Each layer can have its own fallback strategies, allowing the system to degrade gracefully when a specific layer encounters issues.
+   - For example, if the data access layer fails, the business logic layer can provide alternative data sources or default responses.
+
+3. **Event-Driven Architecture**:
+   - In an event-driven architecture, the AI application is designed around the asynchronous exchange of events between different components.
+   - This allows for better decoupling and resilience, as components can continue to operate independently even when other parts of the system fail.
+   - Event-driven architectures can leverage fallback strategies, such as dead-letter queues, retries, and alternative event handlers, to handle failures and maintain system functionality.
+
+4. **Lambda Architecture**:
+   - The Lambda architecture combines batch processing and real-time processing to create a resilient and scalable system.
+   - It consists of three main layers: the batch layer, the speed layer, and the serving layer.
+   - The batch layer can provide a fallback strategy by serving pre-computed results, while the speed layer can handle real-time requests. The serving layer can then combine the results from both layers to provide the most up-to-date and reliable response.
+
+5. **Hybrid Architecture**:
+   - A hybrid architecture combines different architectural patterns to leverage their respective strengths and provide multiple fallback strategies.
+   - For example, a hybrid architecture might use a microservices approach for the core AI functionality, while also incorporating a layered architecture for the user interface and a Lambda architecture for data processing.
+   - This allows the system to have a diverse set of fallback strategies, increasing its overall resilience and robustness.
+
+Regardless of the specific architectural pattern chosen, the key to building resilient AI applications with multiple fallback strategies is to design the system with failure in mind. This includes implementing robust error handling, graceful degradation, and alternative functionality that can be seamlessly activated when primary components or services fail.
+
+By adopting these architectural patterns and incorporating multiple fallback strategies, AI applications can become more resilient, adaptable, and capable of providing reliable and consistent performance, even in the face of unexpected failures or disruptions.
+[11:36:44] Usage: {
+  "inputTokens": 24,
+  "outputTokens": 694,
+  "totalTokens": 718
+}
+[11:36:44] 
+=== ROUTER CLEANUP ===
+[11:36:44] Router Deleted: arn:aws:bedrock:us-east-1:181769953252:prompt-router/pb69f59q1643

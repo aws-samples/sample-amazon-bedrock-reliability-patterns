@@ -1,0 +1,53 @@
+================================================================================
+AMAZON BEDROCK INTELLIGENT PROMPT ROUTING PATTERN - DETAILED LOG
+================================================================================
+Execution Timestamp: 2025-10-01 10:45:33
+Source Region: us-east-1
+Log File: /Users/marakere/my-workspace/amazon-bedrock-reliability-patterns/logs/intelligent_prompt_routing_20251001_104527.log
+================================================================================
+
+[10:45:27] === INTELLIGENT PROMPT ROUTING DEMONSTRATION START ===
+[10:45:27] Initializing intelligent prompt routing demonstration
+[10:45:27] Source region: us-east-1
+[10:45:27] Router configuration: {
+  "name": "demo-router-1759329927",
+  "models": [
+    "anthropic.claude-3-haiku-20240307-v1:0",
+    "anthropic.claude-3-5-sonnet-20241022-v2:0"
+  ],
+  "fallback_model": "anthropic.claude-3-haiku-20240307-v1:0"
+}
+[10:45:27] Starting prompt routing tests
+[10:45:27] Testing default prompt router
+[10:45:27] Testing simple prompt routing
+[10:45:27] Prompt: What is cloud computing?
+[10:45:30] Simple prompt result: 2.96s, 200 tokens
+[10:45:30] Response: Cloud computing refers to the delivery of computing services over the internet. Instead of using local servers or personal devices to store data and run applications, cloud computing utilizes a network of remote servers hosted on the internet to perform these tasks.
+
+Some key characteristics of cloud computing include:
+
+1. On-demand access: Users can access cloud services and resources as needed, without the need to manage the underlying infrastructure.
+
+2. Scalability: Cloud computing allows for easy scaling of resources, both up and down, to meet changing demands.
+
+3. Cost-effectiveness: Cloud services are often provided on a pay-as-you-go model, allowing users to only pay for the resources they use, rather than investing in and maintaining their own infrastructure.
+
+4. Accessibility: Cloud-based applications and data can be accessed from any device with an internet connection, enabling remote and mobile work.
+
+5. Reliability: Cloud providers often have robust backup and disaster recovery systems in place,
+[10:45:30] Testing complex prompt routing
+[10:45:30] Prompt: Analyze the architectural trade-offs between microservices and monolithic designs, considering scalability, maintainability, deployment complexity, and team organization factors.
+[10:45:33] Complex prompt result: 2.88s, 200 tokens
+[10:45:33] Response: The architectural trade-offs between microservices and monolithic designs involve various factors, including scalability, maintainability, deployment complexity, and team organization. Here's an analysis of these factors:
+
+1. Scalability:
+   - **Microservices**: Microservices are designed to be independently scalable, allowing you to scale specific services based on demand. This approach provides better horizontal scalability, as you can add or remove instances of a particular service without affecting the entire system.
+   - **Monolithic**: Scaling a monolithic application can be more challenging, as the entire application needs to be scaled as a single unit. This can lead to inefficient resource utilization and potential bottlenecks if certain parts of the application experience high traffic.
+
+2. Maintainability:
+   - **Microservices**: Microservices promote modularity and independent development, making it easier to maintain and update individual services without affecting the
+[10:45:33] === INTELLIGENT PROMPT ROUTING DEMONSTRATION COMPLETE ===
+
+================================================================================
+END OF LOG
+================================================================================

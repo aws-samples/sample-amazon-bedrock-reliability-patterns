@@ -1,0 +1,51 @@
+=== MANUAL CROSS-REGION FALLBACK DEMONSTRATION ===
+Timestamp: 2025-09-25 12:03:33
+Model: anthropic.claude-3-sonnet-20240229-v1:0
+Regions: us-east-1, us-west-2, eu-west-1
+
+[12:03:22] Initialized client for region: us-east-1
+[12:03:22] Initialized client for region: us-west-2
+[12:03:22] Initialized client for region: eu-west-1
+[12:03:22] === CROSS-REGION FALLBACK DEMONSTRATION START ===
+[12:03:22] 
+=== REGION AVAILABILITY CHECK: us-east-1 ===
+[12:03:22] Region us-east-1: 98 models available
+[12:03:22] Target model anthropic.claude-3-sonnet-20240229-v1:0: Available
+[12:03:22] 
+=== REGION AVAILABILITY CHECK: us-west-2 ===
+[12:03:23] Region us-west-2: 106 models available
+[12:03:23] Target model anthropic.claude-3-sonnet-20240229-v1:0: Available
+[12:03:23] 
+=== REGION AVAILABILITY CHECK: eu-west-1 ===
+[12:03:24] Region eu-west-1: 35 models available
+[12:03:24] Target model anthropic.claude-3-sonnet-20240229-v1:0: Available
+[12:03:24] 
+=== CROSS-REGION FALLBACK REQUEST: Successful Case ===
+[12:03:24] Prompt: Explain the benefits of cross-region deployment for high availability in 2 sentences.
+[12:03:24] Model: anthropic.claude-3-sonnet-20240229-v1:0
+[12:03:24] Fallback order: us-east-1 -> us-west-2 -> eu-west-1
+[12:03:24] 
+--- ATTEMPT 1: us-east-1 ---
+[12:03:24] Attempting inference in us-east-1
+[12:03:30] Success in us-east-1
+[12:03:30] Response time: 6.55s
+[12:03:30] Content: Cross-region deployment for high availability involves deploying your application across multiple geographic regions, ensuring that if one region experiences an outage or disruption, the application remains available and accessible from other regions. This approach mitigates the risk of a single point of failure and provides a higher level of fault tolerance, allowing your application to continue operating seamlessly even in the face of regional disruptions.
+[12:03:30] Usage: {
+  "input_tokens": 25,
+  "output_tokens": 82
+}
+[12:03:30] 
+=== FALLBACK DEMONSTRATION REQUEST ===
+[12:03:30] Prompt: Describe the importance of failover mechanisms in distributed systems in 2 sentences.
+[12:03:30] Invalid Model (first region): anthropic.claude-3-sonnet-20240229-v1:0-invalid
+[12:03:30] Correct Model (subsequent regions): anthropic.claude-3-sonnet-20240229-v1:0
+[12:03:30] 
+--- ATTEMPT 1: us-east-1 ---
+[12:03:30] Attempting inference in us-east-1 with model: anthropic.claude-3-sonnet-20240229-v1:0-invalid
+[12:03:30] Failed in us-east-1 with model anthropic.claude-3-sonnet-20240229-v1:0-invalid: An error occurred (ValidationException) when calling the InvokeModel operation: The provided model identifier is invalid.
+[12:03:31] 
+--- ATTEMPT 2: us-west-2 ---
+[12:03:31] Attempting inference in us-west-2 with model: anthropic.claude-3-sonnet-20240229-v1:0
+[12:03:33] Success in us-west-2 with model: anthropic.claude-3-sonnet-20240229-v1:0
+[12:03:33] Response time: 1.61s
+[12:03:33] Content: Failover mechanisms are crucial in distributed systems to ensure high availability and fault tolerance. They enable the automatic transfer of workloads or services from a failed component to a redundant or standby component, minimizing downtime and ensuring continuity of operations.

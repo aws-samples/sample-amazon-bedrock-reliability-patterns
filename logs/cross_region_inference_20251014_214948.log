@@ -1,0 +1,6 @@
+2025-10-14 21:49:48,169 - bedrock_cross_region_inference_20251014_214948 - INFO - Starting cross-region inference demonstration
+2025-10-14 21:49:48,687 - bedrock_cross_region_inference_20251014_214948 - INFO - Cross-region inference request for profile: us.anthropic.claude-3-sonnet-20240229-v1:0
+2025-10-14 21:49:52,680 - bedrock_cross_region_inference_20251014_214948 - INFO - Response received: 3.99s, tokens: 59
+2025-10-14 21:49:52,681 - bedrock_cross_region_inference_20251014_214948 - INFO - Cross-region inference request for profile: global.anthropic.claude-sonnet-4-20250514-v1:0
+2025-10-14 21:49:54,264 - bedrock_cross_region_inference_20251014_214948 - INFO - Response received: 1.58s, tokens: 72
+2025-10-14 21:49:54,266 - bedrock_cross_region_inference_20251014_214948 - INFO - Cross-region inference demonstration completed

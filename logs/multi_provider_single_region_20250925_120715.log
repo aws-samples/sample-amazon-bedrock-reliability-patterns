@@ -1,0 +1,45 @@
+=== MULTI-PROVIDER SINGLE-REGION FALLBACK DEMONSTRATION ===
+Timestamp: 2025-09-25 12:07:19
+Region: us-east-1
+Providers: Amazon, Anthropic, Amazon
+
+[12:07:15] Initialized multi-provider fallback with 3 providers
+[12:07:15] Provider 1: Amazon - amazon.nova-lite-v1:0
+[12:07:15] Provider 2: Anthropic - anthropic.claude-3-sonnet-20240229-v1:0
+[12:07:15] Provider 3: Amazon - amazon.nova-micro-v1:0
+[12:07:15] === MULTI-PROVIDER FALLBACK DEMONSTRATION START ===
+[12:07:15] 
+=== PROVIDER AVAILABILITY CHECK ===
+[12:07:16] Provider Amazon (amazon.nova-lite-v1:0): Available
+[12:07:16] Provider Anthropic (anthropic.claude-3-sonnet-20240229-v1:0): Available
+[12:07:16] Provider Amazon (amazon.nova-micro-v1:0): Available
+[12:07:16] Total available providers: 2/3
+[12:07:16] 
+=== MULTI-PROVIDER FALLBACK REQUEST: Normal Operation ===
+[12:07:16] Prompt: Compare serverless vs containerized architectures in 2 sentences.
+[12:07:16] Provider fallback order: Amazon -> Anthropic -> Amazon
+[12:07:16] 
+--- ATTEMPT 1: Amazon ---
+[12:07:16] Attempting inference with Amazon - amazon.nova-lite-v1:0
+[12:07:16] Success with Amazon
+[12:07:16] Response time: 0.52s
+[12:07:16] Content: Serverless architectures abstract away server management, allowing developers to focus solely on code execution in response to events, while containerized architectures package applications and dependencies into standardized units for consistent deployment and scaling across diverse environments.
+[12:07:16] Usage: {
+  "inputTokens": 12,
+  "outputTokens": 41,
+  "totalTokens": 53
+}
+[12:07:16] 
+=== PROVIDER FALLBACK DEMONSTRATION ===
+[12:07:16] Prompt: Explain the advantages of multi-provider architecture for AI applications in 2 sentences.
+[12:07:16] Invalid provider (first attempt): Amazon-Invalid
+[12:07:16] Valid providers (subsequent attempts): Anthropic, Amazon
+[12:07:16] 
+--- ATTEMPT 1: Amazon-Invalid ---
+[12:07:16] Attempting inference with Amazon-Invalid - amazon.nova-lite-v1:0-invalid
+[12:07:16] Failed with Amazon-Invalid: An error occurred (ValidationException) when calling the Converse operation: The provided model identifier is invalid.
+[12:07:17] 
+--- ATTEMPT 2: Anthropic ---
+[12:07:17] Attempting inference with Anthropic - anthropic.claude-3-sonnet-20240229-v1:0
+[12:07:19] Success with Anthropic
+[12:07:19] Response time: 1.73s

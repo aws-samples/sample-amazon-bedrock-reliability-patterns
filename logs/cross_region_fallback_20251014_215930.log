@@ -1,0 +1,49 @@
+================================================================================
+MANUAL CROSS-REGION FALLBACK PATTERN - DETAILED LOG
+================================================================================
+Execution Timestamp: 2025-10-14 21:59:39
+Regions: us-east-1, us-west-2, eu-west-1
+Model ID: anthropic.claude-3-sonnet-20240229-v1:0
+Log File: /Users/marakere/my-workspace/amazon-bedrock-reliability-patterns/logs/cross_region_fallback_20251014_215930.log
+================================================================================
+
+[21:59:30] Initialized client for region: us-east-1
+[21:59:30] Initialized client for region: us-west-2
+[21:59:30] Initialized client for region: eu-west-1
+[21:59:30] Starting MANUAL CROSS-REGION FALLBACK demonstration
+[21:59:30] Initializing manual cross-region fallback demonstration
+[21:59:30] Target regions: us-east-1, us-west-2, eu-west-1
+[21:59:30] Model ID: anthropic.claude-3-sonnet-20240229-v1:0
+[21:59:30] Testing model availability across regions
+[21:59:30] Testing model availability in region: us-east-1
+[21:59:33] Region us-east-1 test successful: 2.69s
+[21:59:33] Token usage: {
+  "inputTokens": 13,
+  "outputTokens": 43,
+  "totalTokens": 56
+}
+[21:59:33] Testing model availability in region: us-west-2
+[21:59:35] Region us-west-2 test successful: 2.63s
+[21:59:35] Token usage: {
+  "inputTokens": 13,
+  "outputTokens": 50,
+  "totalTokens": 63
+}
+[21:59:35] Testing model availability in region: eu-west-1
+[21:59:36] Region eu-west-1 test failed: An error occurred (AccessDeniedException) when calling the Converse operation: You don't have access to the model with the specified model ID.
+[21:59:36] Testing cross-region fallback with sample prompt
+[21:59:36] Starting cross-region fallback for prompt: Explain the benefits of cross-region failover in 2 sentences.
+[21:59:36] Attempting inference in region: us-east-1
+[21:59:36] Testing model availability in region: us-east-1
+[21:59:39] Region us-east-1 test successful: 3.66s
+[21:59:39] Token usage: {
+  "inputTokens": 13,
+  "outputTokens": 43,
+  "totalTokens": 56
+}
+[21:59:39] Successfully completed inference in region: us-east-1
+[21:59:39] Completed MANUAL CROSS-REGION FALLBACK demonstration
+
+================================================================================
+END OF LOG
+================================================================================

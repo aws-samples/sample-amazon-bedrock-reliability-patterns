@@ -1,0 +1,147 @@
+=== AMAZON BEDROCK INTELLIGENT PROMPT ROUTING DEMONSTRATION ===
+Timestamp: 2025-09-25 11:24:33
+Region: us-east-1
+
+[11:24:13] 
+=== AVAILABLE ROUTERS DISCOVERY ===
+[11:24:13] Found Router: {'arn': 'arn:aws:bedrock:us-east-1:181769953252:default-prompt-router/amazon.nova:1', 'name': 'Nova Prompt Router', 'status': 'AVAILABLE', 'type': 'default', 'created_at': datetime.datetime(2025, 4, 21, 7, 0, tzinfo=tzutc())}
+[11:24:13] Found Router: {'arn': 'arn:aws:bedrock:us-east-1:181769953252:default-prompt-router/anthropic.claude:1', 'name': 'Anthropic Prompt Router', 'status': 'AVAILABLE', 'type': 'default', 'created_at': datetime.datetime(2024, 11, 20, 0, 0, tzinfo=tzutc())}
+[11:24:13] Found Router: {'arn': 'arn:aws:bedrock:us-east-1:181769953252:default-prompt-router/meta.llama:1', 'name': 'Meta Prompt Router', 'status': 'AVAILABLE', 'type': 'default', 'created_at': datetime.datetime(2024, 11, 20, 0, 0, tzinfo=tzutc())}
+[11:24:13] Default Routers Found: 3
+[11:24:13] 
+=== INTELLIGENT ROUTING REQUEST: Default Router Test 1 ===
+[11:24:13] Router ARN: arn:aws:bedrock:us-east-1:181769953252:default-prompt-router/anthropic.claude:1
+[11:24:13] Prompt: Hi there!
+[11:24:13] Prompt Length: 9 characters
+[11:24:14] 
+--- RESPONSE DETAILS ---
+[11:24:14] Response Time: 1.28s
+[11:24:14] Content: Hello! How can I assist you today?
+[11:24:14] Usage: {
+  "input_tokens": 10,
+  "output_tokens": 12
+}
+[11:24:14] 
+=== INTELLIGENT ROUTING REQUEST: Default Router Test 2 ===
+[11:24:14] Router ARN: arn:aws:bedrock:us-east-1:181769953252:default-prompt-router/anthropic.claude:1
+[11:24:14] Prompt: Explain the architectural patterns for building resilient AI applications with multiple fallback strategies.
+[11:24:14] Prompt Length: 108 characters
+[11:24:24] 
+--- RESPONSE DETAILS ---
+[11:24:24] Response Time: 9.07s
+[11:24:24] Content: Building resilient AI applications with multiple fallback strategies involves designing a system that can gracefully handle failures and provide alternative solutions to ensure the continuity of the application's functionality. Here are some key architectural patterns that can be employed for this purpose:
+
+1. **Microservices Architecture**:
+   - Decompose the AI application into smaller, independent services that handle specific functionalities.
+   - Each service is responsible for a single task and can be scaled, deployed, and updated independently.
+   - If one service fails, the rest of the application can continue to function, providing a degree of resilience.
+   - Implement circuit breakers, retries, and fallbacks between the microservices to handle failures and provide alternative solutions.
+
+2. **Lambda Architecture**:
+   - Combine a speed layer (for real-time processing) and a batch layer (for historical data processing) to create a robust and resilient AI application.
+   - The speed layer provides low-latency responses, while the batch layer can handle more complex and computationally intensive tasks.
+   - If the speed layer fails or is overloaded, the batch layer can be used as a fallback to provide a degraded but functional service.
+   - This pattern allows the application to handle both real-time and batch processing requirements, with the ability to switch between them as needed.
+
+3. **Hybrid AI Architecture**:
+   - Combine multiple AI models or techniques (e.g., rule-based systems, machine learning, deep learning) to create a more resilient and versatile AI application.
+   - If one AI model fails or performs poorly in a particular scenario, the application can switch to an alternative model or technique as a fallback.
+   - This approach can provide a diverse set of capabilities and fallback options, increasing the overall resilience of the AI application.
+
+4. **Edge Computing and Fog Computing**:
+   - Distribute the AI application's processing and decision-making capabilities across multiple edge devices or fog nodes.
+   - If the central server or cloud-based components fail, the edge or fog devices can continue to provide a limited set of functionalities, ensuring the application remains partially operational.
+   - This pattern can help reduce latency, improve responsiveness, and provide failover capabilities in case of network or central system failures.
+
+5. **Backup and Restoration**:
+   - Implement regular backup and restoration mechanisms for the AI application's data, models, and configurations.
+   - In the event of a catastrophic failure or data loss, the application can be restored from the backup, ensuring continuity of service.
+   - Regularly test the backup and restoration process to ensure its reliability and effectiveness.
+
+6. **Monitoring and Alerting**:
+   - Implement comprehensive monitoring and alerting systems to detect and respond to failures, performance issues, and anomalies in the AI application.
+   - Use monitoring tools to track the health and status of the various components, services, and AI models within the application.
+   - Set up alerts and notifications to quickly identify and address problems, allowing for rapid response and failover to alternative solutions.
+
+7. **Graceful Degradation**:
+   - Design the AI application to gracefully degrade its functionality in the face of failures or resource constraints.
+   - Prioritize the most critical features and ensure they remain available, even if it means sacrificing less essential functionalities.
+   - Provide clear communication to users about the degraded state of the application and any limitations in its capabilities.
+
+By incorporating these architectural patterns and strategies, you can build AI applications that are more resilient, capable of handling failures, and able to provide alternative solutions to ensure the continuity of the application's functionality.
+[11:24:24] Usage: {
+  "input_tokens": 24,
+  "output_tokens": 801
+}
+[11:24:24] 
+=== CUSTOM ROUTER CREATION ===
+[11:24:24] Router Name: demo-router-1758813853
+[11:24:24] Models: ['anthropic.claude-3-haiku-20240307-v1:0', 'anthropic.claude-3-5-sonnet-20241022-v2:0']
+[11:24:24] Fallback Model: anthropic.claude-3-haiku-20240307-v1:0
+[11:24:24] Router Created: arn:aws:bedrock:us-east-1:181769953252:prompt-router/4pui8ajkwkhm
+[11:24:24] Waiting for router to become active...
+[11:24:24] Router Status Check 1: AVAILABLE
+[11:24:24] Router is now active and ready
+[11:24:24] 
+=== INTELLIGENT ROUTING REQUEST: Custom Router Test 1 ===
+[11:24:24] Router ARN: arn:aws:bedrock:us-east-1:181769953252:prompt-router/4pui8ajkwkhm
+[11:24:24] Prompt: Hi there!
+[11:24:24] Prompt Length: 9 characters
+[11:24:24] 
+--- RESPONSE DETAILS ---
+[11:24:24] Response Time: 0.46s
+[11:24:24] Content: Hello! How can I assist you today?
+[11:24:24] Usage: {
+  "input_tokens": 10,
+  "output_tokens": 12
+}
+[11:24:24] 
+=== INTELLIGENT ROUTING REQUEST: Custom Router Test 2 ===
+[11:24:24] Router ARN: arn:aws:bedrock:us-east-1:181769953252:prompt-router/4pui8ajkwkhm
+[11:24:24] Prompt: Explain the architectural patterns for building resilient AI applications with multiple fallback strategies.
+[11:24:24] Prompt Length: 108 characters
+[11:24:32] 
+--- RESPONSE DETAILS ---
+[11:24:32] Response Time: 8.22s
+[11:24:32] Content: Building resilient AI applications with multiple fallback strategies involves adopting architectural patterns that can handle failures and ensure continued service delivery. Here are some common architectural patterns that can be used to achieve this:
+
+1. **Microservices Architecture**:
+   - Microservices architecture involves breaking down a larger application into smaller, independent services that communicate with each other through well-defined interfaces.
+   - This approach allows for better isolation of failures, as a failure in one service does not necessarily affect the entire application.
+   - Microservices can be designed with fallback strategies, such as circuit breakers, retry mechanisms, and load balancing, to handle service failures and maintain application resilience.
+
+2. **Serverless Architecture**:
+   - Serverless architecture, also known as Function-as-a-Service (FaaS), is a cloud-based approach where the underlying infrastructure is managed by the cloud provider.
+   - Serverless functions can be used as fallback strategies in AI applications, allowing for rapid scaling, automatic failover, and load balancing.
+   - In the event of a failure in one part of the application, serverless functions can be triggered as an alternative to maintain service continuity.
+
+3. **Event-Driven Architecture**:
+   - Event-driven architecture is a design pattern where components of an application communicate asynchronously through the exchange of events.
+   - This approach allows for better decoupling and isolation of failures, as components can be designed to handle failures independently.
+   - Event-driven architectures can leverage message queues, message brokers, or event streaming platforms (e.g., Apache Kafka) to provide fallback strategies and retry mechanisms.
+
+4. **Redundancy and Load Balancing**:
+   - Implementing redundancy and load balancing mechanisms can enhance the resilience of AI applications.
+   - This can involve deploying multiple instances of the same service or component, and using load balancers to distribute the workload across these instances.
+   - In case of a failure or high load in one instance, the load balancer can automatically redirect traffic to the available instances, ensuring continued service delivery.
+
+5. **Caching and Offline Functionality**:
+   - Incorporating caching mechanisms and offline functionality can provide fallback strategies for AI applications.
+   - Caching can be used to store frequently accessed data or pre-computed results, reducing the dependency on external services and improving response times.
+   - Offline functionality allows the application to continue operating, even when the primary data sources or services are unavailable, by leveraging cached or locally stored data.
+
+6. **Graceful Degradation**:
+   - Graceful degradation is a design principle where the application can degrade its functionality in a controlled manner when faced with failures or resource constraints.
+   - This approach allows the application to maintain essential features and provide a reduced but still usable experience, rather than completely failing or crashing.
+   - Graceful degradation can involve fallback strategies, such as simplifying the user interface, reducing the complexity of algorithms, or providing alternative functionality.
+
+These architectural patterns can be combined and customized to build resilient AI applications that can handle failures and provide multiple fallback strategies. The specific choice of patterns will depend on the application's requirements, the nature of the AI components, and the overall system architecture.
+
+It's important to note that implementing these patterns also involves considering factors such as monitoring, logging, and error handling to ensure effective failure detection, analysis, and recovery.
+[11:24:32] Usage: {
+  "input_tokens": 24,
+  "output_tokens": 757
+}
+[11:24:32] 
+=== ROUTER CLEANUP ===
+[11:24:33] Router Deleted: arn:aws:bedrock:us-east-1:181769953252:prompt-router/4pui8ajkwkhm

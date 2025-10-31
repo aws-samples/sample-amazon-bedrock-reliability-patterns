@@ -1,0 +1,39 @@
+=== INTELLIGENT PROMPT ROUTING LOG ===
+Timestamp: 2025-10-14T21:50:42.983063
+Region: us-east-1
+==================================================
+
+[21:50:38] Starting INTELLIGENT PROMPT ROUTING demonstration
+[21:50:38] Initializing intelligent prompt routing demonstration
+[21:50:38] Source region: us-east-1
+[21:50:38] Router configuration: {
+  "fallback_model": "anthropic.claude-3-haiku-20240307-v1:0"
+}
+[21:50:38] Starting prompt routing tests
+[21:50:38] Testing default prompt router
+[21:50:38] Testing simple prompt routing
+[21:50:38] Prompt: What is cloud computing?
+[21:50:40] Simple prompt result: 2.39s, 200 tokens
+[21:50:40] Response: Cloud computing refers to the delivery of computing services over the internet. Instead of using local servers or personal devices to store and access data, applications, and resources, cloud computing allows users to access and utilize these services through the internet, often on-demand and at scale.
+
+The key characteristics of cloud computing include:
+
+1. On-demand access: Users can access cloud-based services and resources whenever they need them, without the need to manage or maintain the underlying infrastructure.
+
+2. Scalability: Cloud computing allows for easy scaling of resources, both up and down, to meet changing demands.
+
+3. Shared resources: Cloud computing leverages a shared pool of resources, such as storage, processing power, and network bandwidth, which can be dynamically allocated to users as needed.
+
+4. Cost-effectiveness: By utilizing shared resources and reducing the need for on-premises infrastructure, cloud computing can be more cost-effective for users, as they only pay for the resources
+[21:50:40] Testing complex prompt routing
+[21:50:40] Prompt: Analyze the architectural trade-offs between microservices and monolithic designs, considering scalability, maintainability, deployment complexity, and team organization factors.
+[21:50:42] Complex prompt result: 1.99s, 200 tokens
+[21:50:42] Response: The architectural trade-offs between microservices and monolithic designs involve several key factors, including scalability, maintainability, deployment complexity, and team organization. Let's explore each of these factors in detail:
+
+1. Scalability:
+   - **Microservices**: Microservices are designed to be independently scalable, allowing you to scale specific components of your application as needed. This provides better horizontal scalability, as you can scale individual services without affecting the entire system.
+   - **Monolithic**: Monolithic applications are typically scaled vertically, meaning you scale the entire application by adding more resources (e.g., CPU, memory) to a single server or a cluster of servers. This can be more challenging to scale as the application grows in complexity.
+
+2. Maintainability:
+   - **Microservices**: Microservices promote modularity and separation of concerns, making it easier to maintain and update individual
+[21:50:42] Completed INTELLIGENT PROMPT ROUTING demonstration

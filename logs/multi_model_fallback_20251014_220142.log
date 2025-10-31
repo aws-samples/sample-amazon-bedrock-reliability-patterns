@@ -1,0 +1,51 @@
+================================================================================
+MULTI-MODEL FALLBACK PATTERN - DETAILED LOG
+================================================================================
+Execution Timestamp: 2025-10-14 22:01:47
+Source Region: us-east-1
+Model Chain: anthropic.claude-3-sonnet-20240229-v1:0, anthropic.claude-3-haiku-20240307-v1:0, amazon.nova-lite-v1:0
+Log File: /Users/marakere/my-workspace/amazon-bedrock-reliability-patterns/logs/multi_model_fallback_20251014_220142.log
+================================================================================
+
+[22:01:42] Starting MULTI-MODEL FALLBACK demonstration
+[22:01:42] Initializing multi-model fallback demonstration
+[22:01:42] Source region: us-east-1
+[22:01:42] Model chain: anthropic.claude-3-sonnet-20240229-v1:0, anthropic.claude-3-haiku-20240307-v1:0, amazon.nova-lite-v1:0
+[22:01:42] Testing availability of models in fallback chain
+[22:01:42] Testing model availability: anthropic.claude-3-sonnet-20240229-v1:0
+[22:01:45] Model anthropic.claude-3-sonnet-20240229-v1:0 test successful: 3.20s
+[22:01:45] Token usage: {
+  "inputTokens": 13,
+  "outputTokens": 32,
+  "totalTokens": 45
+}
+[22:01:45] Testing model availability: anthropic.claude-3-haiku-20240307-v1:0
+[22:01:46] Model anthropic.claude-3-haiku-20240307-v1:0 test successful: 0.60s
+[22:01:46] Token usage: {
+  "inputTokens": 13,
+  "outputTokens": 37,
+  "totalTokens": 50
+}
+[22:01:46] Testing model availability: amazon.nova-lite-v1:0
+[22:01:46] Model amazon.nova-lite-v1:0 test successful: 0.38s
+[22:01:46] Token usage: {
+  "inputTokens": 6,
+  "outputTokens": 44,
+  "totalTokens": 50
+}
+[22:01:46] Testing multi-model fallback with sample prompt
+[22:01:46] Starting multi-model fallback for prompt: Explain the benefits of model fallback strategies in 2 sentences.
+[22:01:46] Attempting inference with model: anthropic.claude-3-sonnet-20240229-v1:0
+[22:01:46] Testing model availability: anthropic.claude-3-sonnet-20240229-v1:0
+[22:01:47] Model anthropic.claude-3-sonnet-20240229-v1:0 test successful: 0.87s
+[22:01:47] Token usage: {
+  "inputTokens": 13,
+  "outputTokens": 12,
+  "totalTokens": 25
+}
+[22:01:47] Successfully completed inference with model: anthropic.claude-3-sonnet-20240229-v1:0
+[22:01:47] Completed MULTI-MODEL FALLBACK demonstration
+
+================================================================================
+END OF LOG
+================================================================================
