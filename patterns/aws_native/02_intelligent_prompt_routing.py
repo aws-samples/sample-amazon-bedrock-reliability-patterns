@@ -169,75 +169,7 @@ class IntelligentPromptRouting:
         except Exception as e:
             self.console(f"Warning: Could not save log file: {sanitize_error_message(str(e))}")
 
-    def test_default_router(self) -> List[Dict[str, Any]]:
-        """Test default prompt router functionality with enhanced explanations."""
-        self.log("Testing default prompt router with different complexity levels")
 
-        # Simple prompt - should route to cost-effective model
-        simple_prompt = "What is cloud computing?"
-
-        # Complex prompt - should route to high-quality model 
-        complex_prompt = "Analyze the architectural trade-offs between microservices and monolithic designs, considering scalability, maintainability, deployment complexity, and team organization factors."
-
-        results = []
-
-        for prompt_type, prompt in [("simple", simple_prompt), ("complex", complex_prompt)]:
-            self.console(f"🧠 Testing {prompt_type.title()} Prompt Routing:")
-            self.console(f"   → Prompt: {prompt}")
-            self.console("   → Amazon Bedrock analyzing complexity: [Processing...]")
-            
-            self.log(f"Testing {prompt_type} prompt routing")
-            self.log(f"Prompt: {prompt}")
-
-            try:
-                start_time = time.time()
-
-                # Use default routing (fallback model for demonstration)
-                response = self.bedrock_runtime.converse(
-                    modelId=self.router_config['fallback_model'],
-                    messages=[{"role": "user", "content": [{"text": prompt}]}],
-                    inferenceConfig={"maxTokens": 200, "temperature": 0.7}
-                )
-
-                end_time = time.time()
-                response_time = end_time - start_time
-
-                content = response['output']['message']['content'][0]['text']
-                usage = response.get('usage', {})
-
-                self.console(f"   → Model selected: {self.router_config['fallback_model']}")
-                self.console(f"   → Performance: {response_time:.2f}s | Tokens: {usage.get('outputTokens', 0)}")
-                self.console(f"   → Model Response: {content[:100]}{'...' if len(content) > 100 else ''}")
-                self.console(f"   ✅ Success: Quality prediction and routing completed")
-                self.console("")
-
-                result = {
-                    'type': prompt_type,
-                    'success': True,
-                    'response_time': response_time,
-                    'usage': usage,
-                    'content': content
-                }
-
-                self.log(f"{prompt_type.title()} prompt result: {response_time:.2f}s, {usage.get('outputTokens', 0)} tokens")
-                self.log(f"Full response: {content}")
-
-                results.append(result)
-
-            except Exception as e:
-                error_msg = sanitize_error_message(str(e))
-                self.console(f"   ❌ Failed: {error_msg}")
-                self.console("")
-                
-                self.log(f"ERROR: {prompt_type} prompt failed: {error_msg}")
-                results.append({
-                    'type': prompt_type,
-                    'success': False,
-                    'error': error_msg,
-                    'response_time': 0
-                })
-
-        return results
 
     def demonstrate_intelligent_routing(self):
         """Demonstrate intelligent prompt routing with real AWS routers."""
